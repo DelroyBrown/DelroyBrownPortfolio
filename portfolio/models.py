@@ -23,4 +23,22 @@ class Experience(models.Model):
     )
 
     def __str__(self):
-        return self.job_title + " at " + self.company
+        return f"{self.job_title} at {self.company}"
+
+
+class Skills(models.Model):
+    skill = models.CharField(max_length=50, blank=True, null=True, default="")
+    skill_percentage = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.skill} {self.skill_percentage}%"
+
+
+class Certificates(models.Model):
+    certificate_title = models.CharField(max_length=250, blank=True, null=True, default='')
+    certificate_aquired_through = models.CharField(max_length=100, blank=True, null=True, default='')
+    certificate_description = models.TextField(max_length=1000, blank=True, null=True, default='')
+    certificate_completion_date = models.CharField(max_length=50, blank=True, null=True, default='')
+
+    def __str__(self):
+        return f"{self.certificate_title} from {self.certificate_aquired_through}"

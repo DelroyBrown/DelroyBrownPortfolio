@@ -102,54 +102,25 @@
                 </div>
                 <div class="c8">
                     <div class="tabs-container" id="tab1-content">
-                        <p class="skill-title">HTML <span>90%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:90%"></span></div>
-                        </div>
+                        {% for skill in skills %}
 
-                        <p class="skill-title">CSS <span>90%</span></p>
+                        <p class="skill-title">{{skill.skill}} <span>{{ skill.skill_percentage }}%</span></p>
                         <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:90%"></span></div>
+                            <div class="skill-bar enabled"><span style="width:{{skill.skill_percentage}}%"></span></div>
                         </div>
-
-                        <p class="skill-title">JavaScript <span>75%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:70%"></span></div>
-                        </div>
-
-                        <p class="skill-title">JQuery <span>80%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:80%"></span></div>
-                        </div>
-                        <p class="skill-title">Angular <span>70%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:70%"></span></div>
-                        </div>
-                        <p class="skill-title">React <span>75%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:75%"></span></div>
-                        </div>
-                        <p class="skill-title">Python <span>87%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:87%"></span></div>
-                        </div>
-                        <p class="skill-title">Django <span>90%</span></p>
-                        <div class="skill-bar-wrapper">
-                            <div class="skill-bar enabled"><span style="width:90%"></span></div>
-                        </div>
+                        {% endfor %}
                     </div>
+
                     <div class="tabs-container" id="tab2-content">
+                        {% for certificate in certificates %}
                         <div class="row">
                             <div class="c8">
-                                <h4>The Complete JavaScript Course 2023: From Zero to Expert!</h4>
-                                <h6>Udemy</h6>
-                                <p>An immersive, in-depth
-                                    journey into JavaScript, expertly guiding learners from the fundamentals to mastery,
-                                    empowering them to build intricate, interactive web applications with
-                                    sophistication.</p>
+                                <h4>{{ certificate.certificate_title }}</h4>
+                                <h6>{{ certificate.certificate_aquired_through }}</h6>
+                                <p>{{ certificate.certificate_description }}</p>
                             </div>
                             <div class="c4">
-                                <h4 class="align-right">2023</h4>
+                                <h4 class="align-right">{{ certificate.certificate_completion_date }}</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -157,80 +128,13 @@
                                 <hr>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="c8">
-                                <h4>Angular: The Complete Guide<br>(2023 Edition)</h4>
-                                <h6>Udemy</h6>
-                                <p>A comprehensive exploration into Angular, meticulously designed to transition
-                                    learners from basics to advanced concepts, fostering the creation of complex,
-                                    highly-responsive single-page applications.</p>
-                            </div>
-                            <div class="c4">
-                                <h4 class="align-right">2023</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c12">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c8">
-                                <h4>Python Mega Course</h4>
-                                <h6>Udemy</h6>
-                                <p>An extensive dive into Python programming, systematically moving from foundational
-                                    principles to advanced topics, enabling learners to tackle a vast array of
-                                    applications ranging from web development to data analysis and AI.</p>
-                            </div>
-                            <div class="c4">
-                                <h4 class="align-right">2023</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c12">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c8">
-                                <h4>React: The Complete Guide</h4>
-                                <h6>Udemy</h6>
-                                <p>An exhaustive foray into React, seamlessly leading students from introductory
-                                    concepts to profound expertise, equipping them to construct highly interactive,
-                                    reusable UI components for intricate single-page applications.</p>
-                            </div>
-                            <div class="c4">
-                                <h4 class="align-right">2023</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c12">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c8">
-                                <h4>Python/Django: The Practical Guide</h4>
-                                <h6>Udemy</h6>
-                                <p>A pragmatic exploration of Django, expertly navigating from rudimentary knowledge to
-                                    advanced utilization, enabling learners to craft secure, scalable, and maintainable
-                                    web applications efficiently.</p>
-                            </div>
-                            <div class="c4">
-                                <h4 class="align-right">2023</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c12">
-                                <hr>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="tabs-container" id="tab3-content">
-                        {% for experience in experiences  %}
+                        {% for experience in experiences %}
                         <div class="row">
                             <div class="c8">
-                                  
+
                                 <h4>{{ experience.job_title }}</h4>
                                 <h6>{{ experience.company }}</h6>
                                 <p>{{ experience.role_description }}
