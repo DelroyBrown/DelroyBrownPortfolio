@@ -1,5 +1,5 @@
 import os
-from decouple import Config, Csv
+from decouple import Config
 import dj_database_url
 from dotenv import load_dotenv
 from pathlib import Path
