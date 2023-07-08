@@ -62,112 +62,12 @@
               <a href="#" rel="category tag">Photography</a>,
               <a href="#" rel="category tag">Blog</a>
             </span>
-            <a href="#">3 Comments</a>
+            <!-- <a href="#">3 Comments</a> -->
           </div>
         </div>
       </div>
 
-      <div id="comments" class="comments-area">
-        <div class="row">
-          <div class="c12 end">
-            <h4 class="total-comment">3 comments</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="c12 end">
-            <ul class="commentlist">
-              <li class="comment byuser comment-author-dingo even thread-even depth-1">
-                <article id="comment-1" class="comment">
-                  <span class="comment-avartar" style="background:url(img/profile.png) no-repeat center center;"></span>
-                  <div class="comment-holder">
-                    <div class="comment-header">
-                      <cite class="fn">dingo</cite>
-                      <time>January 24, 2023 at 11:42 pm</time>
-                    </div>
-                    <div class="comment-text">
-                      <p>Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim
-                        ipsam
-                        voluptatem.</p>
-                    </div>
-                  </div>
-                </article>
-
-                <ul class="children">
-                  <li class="comment odd alt depth-2">
-                    <article id="comment-15" class="comment">
-                      <span class="comment-avartar"
-                        style="background:url(img/profile.png) no-repeat center center;"></span>
-                      <div class="comment-holder">
-                        <div class="comment-header">
-                          <cite class="fn">John Doe</cite>
-                          <time>January 24, 2023 at 11:49 pm</time>
-                        </div>
-                        <div class="comment-text">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum diam
-                            justo,
-                            eget consequat mauris blandit vitae.</p>
-                        </div>
-                      </div>
-                    </article>
-                  </li><!-- #comment-## -->
-                </ul><!-- .children -->
-              </li><!-- #comment-## -->
-              <li class="comment even thread-odd thread-alt depth-1">
-                <article class="comment">
-                  <span class="comment-avartar" style="background:url(img/profile.png) no-repeat center center;"></span>
-                  <div class="comment-holder">
-                    <div class="comment-header">
-                      <cite class="fn">dingo</cite>
-                      <time>January 24, 2023 at 11:42 pm</time>
-                    </div>
-                    <div class="comment-text">
-                      <p>Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim
-                        ipsam
-                        voluptatem.</p>
-                    </div>
-                  </div>
-                </article>
-              </li><!-- #comment-## -->
-            </ul><!-- .commentlist -->
-          </div>
-        </div>
-
-        <div id="respond" class="comment-respond">
-          <div class="row">
-            <div class="c12 end">
-              <h3 id="reply-title" class="comment-reply-title">Leave a comment</h3>
-            </div>
-          </div>
-          <form id="commentform" class="comment-form" onsubmit="return false;">
-            {% csrf_token %}
-            <div class="row">
-              <div class="c12 end">
-                <textarea id="comment" name="comment" placeholder="Comment" cols="45" rows="8"
-                  aria-required="true"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="c4">
-                <input id="author" name="author" type="text" placeholder="Name(Required)" value="" size="30"
-                  aria-required="true">
-              </div>
-
-              <div class="c4">
-                <input id="email" name="email" type="text" placeholder="Email(Required)" value="" size="30"
-                  aria-required="true">
-              </div>
-              <div class="c4 end">
-                <input id="url" name="url" type="text" placeholder="Website" value="" size="30">
-              </div>
-            </div>
-            <div class="row">
-              <div class="c2">
-                <input name="submit" type="submit" class="submit">
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <!-- COMMENTS IN SEPARATE FILE -->
       <div id="sidebar">
         <aside>
           <form role="search" id="searchform" class="searchform" onsubmit="return false;">
