@@ -227,15 +227,17 @@
                         </div>
                     </div>
                     <div class="tabs-container" id="tab3-content">
+                        {% for experience in experiences  %}
                         <div class="row">
                             <div class="c8">
-                                <h4>UI Designer</h4>
-                                <h6>Freelance</h6>
-                                <p>Praesent congue diam eu accumsan sodales. In ligula dui, pretium gravida aliquet
-                                    quis, iaculis a diam. Nulla ut posuere augue.</p>
+                                  
+                                <h4>{{ experience.job_title }}</h4>
+                                <h6>{{ experience.company }}</h6>
+                                <p>{{ experience.role_description }}
+                                </p>
                             </div>
                             <div class="c4">
-                                <h4 class="align-right">2022 - 2023</h4>
+                                <h4 class="align-right">{{ experience.time_working_for_company }}</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -243,22 +245,7 @@
                                 <hr>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="c8">
-                                <h4>Graphic Designer</h4>
-                                <h6>Stock Company</h6>
-                                <p>Praesent congue diam eu accumsan sodales. In ligula dui, pretium gravida aliquet
-                                    quis, iaculis a diam. Nulla ut posuere augue.</p>
-                            </div>
-                            <div class="c4">
-                                <h4 class="align-right">2020 - 2022</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="c12">
-                                <hr>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -409,7 +396,7 @@
                                     target="_blank">Source Code</a>
                             </div>
                         </li>
-                       <!-- <li class="popup-image" data-groups='["all","python"]'>
+                        <!-- <li class="popup-image" data-groups='["all","python"]'>
                             <figure class="imghvr-shutter-in-out-diag-1">
                                 <img src="{% static 'img/450x450.jpg' %}">
                                 <figcaption>

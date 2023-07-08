@@ -1417,6 +1417,7 @@ input[type=submit]:active {
 
 .tabs-container p {
     margin: 10px 0;
+    width: 850px;
 }
 
 .tabs-container .row:last-of-type hr {
@@ -2576,6 +2577,11 @@ textarea:focus-visible {
     .testomonial p {
         font-size: 1rem;
         line-height: 2rem;
+    }
+
+    .tabs-container p {
+        width: auto;
+
     }
 }
 

@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Experience
 
 
 def home(request):
     posts = Post.objects.all().order_by("-date")
-    return render(request, "index.html", {"posts": posts})
+    experiences = Experience.objects.all()
+    return render(request, "index.html", {"posts": posts, "experiences" : experiences})
 
 
 def post_detail(request, id):

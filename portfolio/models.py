@@ -12,3 +12,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Experience(models.Model):
+    job_title = models.CharField(max_length=100, blank=True, null=True, default="")
+    company = models.CharField(max_length=100, blank=True, null=True, default="")
+    role_description = models.TextField(max_length=1000)
+    time_working_for_company = models.CharField(
+        max_length=100, blank=True, null=True, default=""
+    )
+
+    def __str__(self):
+        return self.job_title + " at " + self.company
