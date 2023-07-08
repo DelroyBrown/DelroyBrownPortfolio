@@ -1,5 +1,5 @@
 import os
-from decouple import Config
+from decouple import Config, Csv
 import dj_database_url
 from dotenv import load_dotenv
 from pathlib import Path
@@ -65,8 +65,7 @@ WSGI_APPLICATION = "protfolio_final_base.wsgi.application"
 #     }
 # }
 
-config = Config()
-
+config = Config(os.path.dirname(os.path.abspath(__file__)))
 
 DATABASES = {
     "default": dj_database_url.config("DATABASE_URL")
