@@ -21,10 +21,10 @@
                 <a href="#home"><img src="{% static 'img/logo.png' %}" alt="Delroy J. Brown"></a>
             </div>
             <ul class="social">
-                <li><a target="_blank" href="https://www.instagram.com/"><i class="lni lni-instagram"></i></a></li>
-                <li><a target="_blank" href="https://www.twitter.com/"><i class="lni lni-twitter"></i></a></li>
-                <li><a target="_blank" href="https://www.facebook.com/"><i class="lni lni-facebook"></i></a></li>
-                <li><a target="_blank" href="https://www.dribbble.com/"><i class="lni lni-dribbble"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/delroyjbrown"><i class="lni lni-instagram"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/delroy-brown-b83045226/"><i class="lni lni-linkedin"></i></a></li>
+                <!-- <li><a target="_blank" href="https://www.facebook.com/"><i class="lni lni-facebook"></i></a></li>
+                <li><a target="_blank" href="https://www.dribbble.com/"><i class="lni lni-dribbble"></i></a></li> -->
             </ul>
         </header>
 
@@ -101,6 +101,8 @@
                     </ul>
                 </div>
                 <div class="c8">
+
+                    <!-- SKILLS -->
                     <div class="tabs-container" id="tab1-content">
                         {% for skill in skills %}
 
@@ -111,6 +113,7 @@
                         {% endfor %}
                     </div>
 
+                    <!-- CERTIFICATES -->
                     <div class="tabs-container" id="tab2-content">
                         {% for certificate in certificates %}
                         <div class="row">
@@ -130,6 +133,8 @@
                         </div>
                         {% endfor %}
                     </div>
+
+                    <!-- EXPERIENCE -->
                     <div class="tabs-container" id="tab3-content">
                         {% for experience in experiences %}
                         <div class="row">
@@ -229,26 +234,7 @@
                 </div>
             </div> -->
             <!--END ROW-->
-            <footer>
-                <div class="row">
-                    <div class="c12 end">
-                        <div class="footer-inner">
-                            <p class="copyright">© 2023 Delroy Brown. All Rights Reserved.
-                            </p>
-                            <ul class="social-footer">
-                                <li><a target="_blank" href="https://www.instagram.com/"><i
-                                            class="lni lni-instagram"></i></a></li>
-                                <li><a target="_blank" href="https://www.twitter.com/"><i
-                                            class="lni lni-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.facebook.com/"><i
-                                            class="lni lni-facebook"></i></a></li>
-                                <li><a target="_blank" href="https://www.dribbble.com/"><i
-                                            class="lni lni-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            {% include "includes/footer.html" %}
         </div><!--END CONTENT-->
     </section><!--END ABOUT-->
     <section class="page" id="portfolio">
@@ -281,7 +267,9 @@
                                 </figcaption>
                             </figure>
                             <div class="card-bottom-text">
-                                <p>A fun JavaScript guessing game.</p>
+                                <p>"Guess My Number" is a fun, mellow and interactive game. A secret number is randomly
+                                    generated and your mission is to guess it.
+                                </p>
                                 <a href="https://github.com/DelroyBrown/guessMyNumber/blob/main/js/script.js"
                                     target="_blank">Source Code</a>
                             </div>
@@ -295,7 +283,9 @@
                                 </figcaption>
                             </figure>
                             <div class="card-bottom-text">
-                                <p>See who hits 100 first.</p>
+                                <p>"Hit100" is a dice game for two. Roll until you get a 1 or decide to hold. First
+                                    to score 100 wins. 'New Game' restarts.
+                                </p>
                                 <a href="https://github.com/DelroyBrown/Hit100/blob/main/js/script.js"
                                     target="_blank">Source Code</a>
                             </div>
@@ -333,30 +323,11 @@
                 </div>
             </div>
             <!--END ROW-->
-            <footer>
-                <div class="row">
-                    <div class="c12 end">
-                        <div class="footer-inner">
-                            <p class="copyright">© 2023 Delroy J. Brown. All Rights Reserved.
-                            </p>
-                            <ul class="social-footer">
-                                <li><a target="_blank" href="https://www.instagram.com/"><i
-                                            class="lni lni-instagram"></i></a></li>
-                                <li><a target="_blank" href="https://www.twitter.com/"><i
-                                            class="lni lni-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.facebook.com/"><i
-                                            class="lni lni-facebook"></i></a></li>
-                                <li><a target="_blank" href="https://www.dribbble.com/"><i
-                                            class="lni lni-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            {% include "includes/footer.html" %}
         </div><!--END CONTENT-->
     </section><!--END PORTFOLIO-->
 
-
+    <!-- BLOG -->
     <section class="page" id="blog">
         <header>
             <span class="title">Blog</span>
@@ -366,10 +337,11 @@
 
             <div class="page-header c12">
                 <h1 data-value="Latest News">Latest News</h1>
-                <span class="toggle-sidebar"><i></i></span>
+                <!-- <span class="toggle-sidebar"><i></i></span> -->
                 <hr>
             </div>
 
+            <!-- BLOG POSTS -->
             {% for post in posts %}
             <div class="blog-recent-post-item row">
                 <div class="c12 end">
@@ -451,7 +423,7 @@
             </div> -->
 
 
-            <div id="sidebar">
+            <!-- <div id="sidebar">
                 <aside>
 
                     <form role="search" id="searchform" class="searchform" onsubmit="return false;">
@@ -495,31 +467,12 @@
                         <a href="#" style="font-size: 15.777777777778pt;">Blog</a>
                     </div>
                 </aside>
-            </div>
-            <footer>
-                <div class="row">
-                    <div class="c12 end">
-                        <div class="footer-inner">
-                            <p class="copyright">© 2023 Delroy Brown. All Rights Reserved.
-                            </p>
-                            <ul class="social-footer">
-                                <li><a target="_blank" href="https://www.instagram.com/"><i
-                                            class="lni lni-instagram"></i></a></li>
-                                <li><a target="_blank" href="https://www.twitter.com/"><i
-                                            class="lni lni-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.facebook.com/"><i
-                                            class="lni lni-facebook"></i></a></li>
-                                <li><a target="_blank" href="https://www.dribbble.com/"><i
-                                            class="lni lni-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            </div> -->
+            {% include "includes/footer.html" %}
         </div><!--END CONTENT-->
     </section><!--END BLOG-->
 
-
+    <!-- CONTACT -->
     <section class="page" id="contact">
         <header>
             <span class="title">Contact</span>
@@ -588,26 +541,7 @@
                     </ul>
                 </div>
             </div>
-            <footer>
-                <div class="row">
-                    <div class="c12 end">
-                        <div class="footer-inner">
-                            <p class="copyright">© 2023 Delroy Brown. All Rights Reserved.
-                            </p>
-                            <ul class="social-footer">
-                                <li><a target="_blank" href="https://www.instagram.com/"><i
-                                            class="lni lni-instagram"></i></a></li>
-                                <li><a target="_blank" href="https://www.twitter.com/"><i
-                                            class="lni lni-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.facebook.com/"><i
-                                            class="lni lni-facebook"></i></a></li>
-                                <li><a target="_blank" href="https://www.dribbble.com/"><i
-                                            class="lni lni-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+           {% include "includes/footer.html" %}
         </div><!--END CONTENT-->
     </section><!--END CONTACT-->
 </main>
