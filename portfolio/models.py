@@ -35,10 +35,28 @@ class Skills(models.Model):
 
 
 class Certificates(models.Model):
-    certificate_title = models.CharField(max_length=250, blank=True, null=True, default='')
-    certificate_aquired_through = models.CharField(max_length=100, blank=True, null=True, default='')
-    certificate_description = models.TextField(max_length=1000, blank=True, null=True, default='')
-    certificate_completion_date = models.CharField(max_length=50, blank=True, null=True, default='')
+    certificate_title = models.CharField(
+        max_length=250, blank=True, null=True, default=""
+    )
+    certificate_aquired_through = models.CharField(
+        max_length=100, blank=True, null=True, default=""
+    )
+    certificate_description = models.TextField(
+        max_length=1000, blank=True, null=True, default=""
+    )
+    certificate_completion_date = models.CharField(
+        max_length=50, blank=True, null=True, default=""
+    )
 
     def __str__(self):
         return f"{self.certificate_title} from {self.certificate_aquired_through}"
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=200, blank=False, null=False, default="")
+    email = models.EmailField(max_length=200, blank=True, null=True, default="")
+    subject = models.CharField(max_length=200, blank=False, null=False, default="")
+    content = models.TextField(max_length=5000, blank=True, null=True, default="")
+
+    def __str__(self):
+        return f"{self.name} is asking about {self.subject}"

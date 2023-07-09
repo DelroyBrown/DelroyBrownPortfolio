@@ -1,0 +1,144 @@
+{% load static %}
+<section class="page" id="blog">
+    <header>
+        <span class="title">Blog</span>
+        <span class="title-number">03</span>
+    </header>
+    <div class="content grid">
+
+        <div class="page-header c12">
+            <h1 data-value="Latest News">Latest News</h1>
+            <!-- <span class="toggle-sidebar"><i></i></span> -->
+            <hr>
+        </div>
+
+        <!-- BLOG POSTS -->
+        {% for post in posts %}
+        <div class="blog-recent-post-item row">
+            <div class="c12 end">
+                <a class="recent-post-img" href="{% url 'portfolio:post_detail' id=post.id %}" rel="">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    <span class="date"><span class="day">26</span> Feb 2023</span>
+                </a>
+                <h2 class="gamma entry-title"><a href="blog-single-1.html" rel="">{{ post.title }}</a></h2>
+                <p>{{ post.text }}</p>
+                <div class="entry-meta">
+                    <span>By {{ post.created_by }}</span>
+                    <span><time class="entry-date" datetime="2013-11-17T09:00:33+00:00">{{ post.date
+                            }}</time></span>
+                    <span class="cat-links">In
+                        <a class="dummy" href="#" rel="category tag">Image</a>,
+                        <a class="dummy" href="#" rel="category tag">Photography</a>,
+                        <a class="dummy" href="#" rel="category tag">Blog</a>
+                    </span>
+                    <a class="dummy" href="#">25 Comments</a>
+                    <a class="readmore" href="blog-single-1.html">Read more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- <div class="blog-recent-post-item row">
+            <div class="c12 end">
+                <a class="recent-post-img" href="blog-single-2.html" rel="">
+                    <img src="{% static 'img/1900x650.jpg' %}" alt="Blog">
+                    <span class="date"><span class="day">21</span> Feb 2023</span>
+                </a>
+                <h2 class="gamma entry-title"><a href="blog-single-2.html" rel="">Explicabo Nemo</a></h2>
+                <p>Bllo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam
+                    voluptatem.voluptatem, illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo nemo enim ipsam voluptatem. on ultricies nisi voluptatem, illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem.voluptatem, illo
+                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam
+                    voluptatem. Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
+                <div class="entry-meta">
+                    <span>By <a class="dummy" href="#">WebDingo</a></span>
+                    <span><time class="entry-date" datetime="2013-11-17T09:00:33+00:00">February 21,
+                            2023</time></span>
+                    <span class="cat-links">In
+                        <a class="dummy" href="#" rel="category tag">Image</a>,
+                        <a class="dummy" href="#" rel="category tag">Photography</a>,
+                        <a class="dummy" href="#" rel="category tag">Blog</a>
+                    </span>
+                    <a class="dummy" href="#">25 Comments</a>
+                    <a class="readmore" href="blog-single-2.html">Read more</a>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="blog-recent-post-item row">
+            <div class="c12 end">
+                <a class="recent-post-img" href="blog-single-3.html" rel="">
+                    <img src="{% static 'img/1900x650.jpg' %}" alt="Blog">
+                    <span class="date"><span class="day">19</span> Feb 2023</span>
+                </a>
+                <h2 class="gamma entry-title"><a href="blog-single-3.html" rel="">Illo inventore</a></h2>
+                <p>Bllo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam
+                    voluptatem.voluptatem, illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo nemo enim ipsam voluptatem. on ultricies nisi voluptatem, illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem.voluptatem, illo
+                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam
+                    voluptatem. Illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
+                <div class="entry-meta">
+                    <span>By <a class="dummy" href="#">WebDingo</a></span>
+                    <span><time class="entry-date" datetime="2013-11-17T09:00:33+00:00">February 19,
+                            2023</time></span>
+                    <span class="cat-links">In
+                        <a class="dummy" href="#" rel="category tag">Image</a>,
+                        <a class="dummy" href="#" rel="category tag">Photography</a>,
+                        <a class="dummy" href="#" rel="category tag">Blog</a>
+                    </span>
+                    <a class="dummy" href="#">25 Comments</a>
+                    <a class="readmore" href="blog-single-3.html">Read more</a>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- <div id="sidebar">
+            <aside>
+
+                <form role="search" id="searchform" class="searchform" onsubmit="return false;">
+                    <div>
+                        <input type="text" name="s" id="s" placeholder="Search for:">
+                        <input type="submit" id="searchsubmit">
+                        <i class="lni lni-search-alt"></i>
+                    </div>
+                </form>
+            </aside>
+            <aside>
+                <h6 class="widget-title">Recent Posts</h6>
+                <ul>
+                    <li><a href="#">Lorem ipsum dolor sit</a></li>
+                    <li><a href="#">On ultricies nisi voluptatem</a></li>
+                    <li><a href="#">Consectetur adipiscing elit</a></li>
+                    <li><a href="#">Aenean et volutpat felis</a></li>
+                    <li><a href="#">Donec vestibulum neque quis</a></li>
+                </ul>
+            </aside>
+            <aside>
+                <h6 class="widget-title">Text Widget</h6>
+                <p class="textwidget">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum
+                    diam justo, eget consequat mauris blandit vitae.</p>
+            </aside>
+            <aside>
+                <h6 class="widget-title">Categories</h6>
+                <ul>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Image</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </aside>
+            <aside>
+                <h6 class="widget-title">Tags</h6>
+                <div class="tagcloud">
+                    <a href="#" style="font-size: 15.777777777778pt;">Image</a>
+                    <a href="#" style="font-size: 8pt;">Design</a>
+                    <a href="#" style="font-size: 22pt;">Photography</a>
+                    <a href="#" style="font-size: 15.777777777778pt;">Blog</a>
+                </div>
+            </aside>
+        </div> -->
+        {% include "includes/footer.html" %}
+    </div><!--END CONTENT-->
+</section>

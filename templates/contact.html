@@ -1,0 +1,126 @@
+{% load static %}
+<section class="page" id="contact">
+    <header>
+        <span class="title">Contact</span>
+        <span class="title-number">04</span>
+    </header>
+    <div class="content">
+        <div class="page-header c12">
+            <h1 data-value="Get In Touch">Get In Touch</h1>
+            <hr />
+        </div>
+        <div class="row no-margin">
+            <div class="c12">
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="row">
+            <form class="c6">
+                <h2 class="gamma">Message Me</h2>
+
+                <div id="frmContact">
+                    <div id="mail-status"></div>
+
+                    <div>
+                        <span id="userName-info"></span>
+                        <input type="text" name="userName" id="userName" placeholder="Name" />
+                    </div>
+
+                    <div>
+                        <span id="userEmail-info"></span>
+                        <input type="text" name="userEmail" id="userEmail" class="demoInputBox" placeholder="Email" />
+                    </div>
+
+                    <div>
+                        <span id="subject-info"></span>
+                        <input type="text" name="subject" id="subject" class="demoInputBox" placeholder="Subject" />
+                    </div>
+
+                    <div>
+                        <span id="content-info"></span>
+                        <textarea name="content" id="content" class="demoInputBox" placeholder="Message" cols="60"
+                            rows="5"></textarea>
+                    </div>
+
+                    <div>
+                        <button id="send" name="submit" class="btnAction">
+                            Send Mail <i class="lni lni-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="c6">
+                <h2 class="gamma">My Details</h2>
+                <p>
+                    Passionate, innovative professional ready to contribute impactful
+                    solutions. Keen to connect and discuss how my skills can help fulfill
+                    your company's mission and goals.
+                </p>
+                <ul class="contact-details">
+                    <li>
+                        <span class="icon-holder"><i class="lni lni-envelope"></i></span>
+                        <span>Delroybrown.db@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon-holder"><i class="lni lni-phone-set"></i></span>
+                        <span>07795 128316</span>
+                    </li>
+                    <li>
+                        <span class="icon-holder"><i class="lni lni-map-marker"></i></span>
+                        <span>High Wycombe, UK</span>
+                    </li>
+                    <li>
+                        <span class="icon-holder"><i class="lni lni-timer"></i></span>
+                        <span>Mon - Fri 9AM to 5PM | Sat 9AM to 12PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% include "includes/footer.html" %}
+    </div>
+    <!--END CONTENT-->
+    <audio src="/static/audio/messagesnetaudio.mp3" id="messageSentAudio" hidden></audio>
+</section>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#send").click(function (event) {
+            event.preventDefault();
+
+            var userName = $("#userName").val();
+            var userEmail = $("#userEmail").val();
+            var subject = $("#subject").val();
+            var content = $("#content").val();
+
+            var formData = {
+                'userName': userName,
+                'userEmail': userEmail,
+                'subject': subject,
+                'content': content
+            };
+
+            $.ajax({
+                url: "/send_message/",  // Update with the correct URL for your Django view
+                type: "POST",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                    alert(response.message);
+                },
+                error: function (error) {
+                    alert(error.error);
+                }
+            });
+        });
+    });
+
+    document.getElementById('send').addEventListener('click', function () {
+        const messageSentAudio = document.getElementById('messageSentAudio');
+        messageSentAudio.play();
+    })
+</script>   

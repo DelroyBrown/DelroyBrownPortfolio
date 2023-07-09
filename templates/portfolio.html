@@ -1,0 +1,90 @@
+{% load static %}
+<section class="page" id="portfolio">
+    <header>
+        <span class="title">Portfolio</span>
+        <span class="title-number">02</span>
+    </header>
+    <div class="content grid" id="1">
+        <div class="page-header c12">
+            <h1 data-value="My work">My Work</h1>
+            <ul class="portfolio-filter">
+                <li class='selected' data-target='all'>All</li>
+                <li data-target='javascript'>Javascript</li>
+                <!-- <li data-target='django'>Django</li>
+                <li data-target='python'>Python</li>
+                <li data-target='react'>React</li> -->
+            </ul>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="c12 end">
+                <ul class="portfolio-container">
+
+                    <li class="popup-image" data-groups='["all","javascript"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/guessmynumber.png' %}">
+                            <figcaption>
+                                <div data-value="Guess My Number">Guess My Number</div>
+                                <a href="https://delroybrown.github.io/guessMyNumber/" target="_blank"></a>
+                            </figcaption>
+                        </figure>
+                        <div class="card-bottom-text">
+                            <p>"Guess My Number" is a fun, mellow and interactive game. A secret number is randomly
+                                generated and your mission is to guess it.
+                            </p>
+                            <a href="https://github.com/DelroyBrown/guessMyNumber/blob/main/js/script.js"
+                                target="_blank">Source Code</a>
+                        </div>
+                    </li>
+                    <li class="popup-image" data-groups='["all","javascript"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/hit100.png' %}">
+                            <figcaption>
+                                <div data-value="Hit100">Hit100</div>
+                                <a href="https://delroybrown.github.io/Hit100/" target="_blank"></a>
+                            </figcaption>
+                        </figure>
+                        <div class="card-bottom-text">
+                            <p>"Hit100" is a dice game for two. Roll until you get a 1 or decide to hold. First
+                                to score 100 wins. 'New Game' restarts.
+                            </p>
+                            <a href="https://github.com/DelroyBrown/Hit100/blob/main/js/script.js"
+                                target="_blank">Source Code</a>
+                        </div>
+                    </li>
+                    <!-- <li class="popup-image" data-groups='["all","python"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/450x450.jpg' %}">
+                            <figcaption>
+                                <div data-value="Condimentum">Condimentum</div>
+                                <a href="{% static 'img/450x450.jpg' %}"></a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="popup-iframe" data-groups='["all","django"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/450x450.jpg' %}">
+                            <figcaption>
+                                <div data-value="Django">django</div>
+                                <a href="http://www.youtube.com/watch?v=LCBavHkBRV4"></a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="popup-iframe" data-groups='["all","react"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/450x450.jpg' %}">
+                            <figcaption>
+                                <div data-value="Euismod">Euismod</div>
+                                <a
+                                    href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256187803&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></a>
+                            </figcaption>
+                        </figure>
+                    </li> -->
+
+                </ul>
+            </div>
+        </div>
+        <!--END ROW-->
+        {% include "includes/footer.html" %}
+    </div><!--END CONTENT-->
+</section>
