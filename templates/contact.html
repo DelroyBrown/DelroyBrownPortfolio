@@ -15,7 +15,11 @@
             </div>
         </div>
         <div class="row">
-            <form class="c6">
+            <div class="c6 message-sent" id="message-sent">
+                <p>MESSAGE SENT</p>
+                <p>I'll be in touch shortly!</p>
+            </div>
+            <form class="c6" id="messageSent">
                 <h2 class="gamma">Message Me</h2>
 
                 <div id="frmContact">
@@ -80,7 +84,6 @@
         {% include "includes/footer.html" %}
     </div>
     <!--END CONTENT-->
-    <audio src="/static/audio/messagesnetaudio.mp3" id="messageSentAudio" hidden></audio>
 </section>
 
 
@@ -104,13 +107,14 @@
             };
 
             $.ajax({
-                url: "/send_message/",  // Update with the correct URL for your Django view
+                url: "/send_message/",
                 type: "POST",
                 data: JSON.stringify(formData),
                 contentType: "application/json",
                 dataType: "json",
                 success: function (response) {
-                    alert(response.message);
+                    $("#messageSent").hide();
+                    document.getElementById('message-sent').style.display = 'flex';
                 },
                 error: function (error) {
                     alert(error.error);
@@ -119,8 +123,4 @@
         });
     });
 
-    document.getElementById('send').addEventListener('click', function () {
-        const messageSentAudio = document.getElementById('messageSentAudio');
-        messageSentAudio.play();
-    })
-</script>   
+</script>

@@ -2206,6 +2206,13 @@ textarea:focus-visible {
     border: 1px solid #222;
 }
 
+.message-sent {
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
 /* ==========================================================================
       8. Media Queries
       ========================================================================== */
