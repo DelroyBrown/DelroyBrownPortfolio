@@ -1,12 +1,14 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to="posts/")
-    text = models.TextField()
+    blog_body = RichTextField()
     blockquote = models.TextField()
+    blog_list_description = models.TextField(max_length=1000, blank=False, null=False, default='')
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
 

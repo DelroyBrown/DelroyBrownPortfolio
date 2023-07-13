@@ -18,20 +18,20 @@
             <div class="c12 end">
                 <a class="recent-post-img" href="{% url 'portfolio:post_detail' id=post.id %}" rel="">
                     <img src="{{ post.image.url }}" alt="{{ post.title }}">
-                    <span class="date"><span class="day">26</span> Feb 2023</span>
+                    <span class="date"><span class="day">{{ post.date|date:"d"}}</span> {{ post.date|date:"F Y"}}</span>
                 </a>
                 <h2 class="gamma entry-title"><a href="blog-single-1.html" rel="">{{ post.title }}</a></h2>
-                <p>{{ post.text }}</p>
+                <p>{{ post.blog_list_description }}</p>
                 <div class="entry-meta">
                     <span>By {{ post.created_by }}</span>
-                    <span><time class="entry-date" datetime="2013-11-17T09:00:33+00:00">{{ post.date
-                            }}</time></span>
-                    <span class="cat-links">In
+                    <span><time class="entry-date" datetime="2013-11-17T09:00:33+00:00">{{ post.date|date:"D d F Y" }}
+                    </time></span>
+                    <!-- <span class="cat-links">In
                         <a class="dummy" href="#" rel="category tag">Image</a>,
                         <a class="dummy" href="#" rel="category tag">Photography</a>,
                         <a class="dummy" href="#" rel="category tag">Blog</a>
                     </span>
-                    <a class="dummy" href="#">25 Comments</a>
+                    <a class="dummy" href="#">25 Comments</a> -->
                     <a class="readmore" href="blog-single-1.html">Read more</a>
                 </div>
             </div>
