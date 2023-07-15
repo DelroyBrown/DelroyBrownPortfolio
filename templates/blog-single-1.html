@@ -9,7 +9,7 @@
     <div class="content grid">
       <div class="page-header c12">
         <h1 class="beta">{{ post.title }}</h1>
-        <span class="toggle-sidebar"><i></i></span>
+        <!-- <span class="toggle-sidebar"><i></i></span> -->
       </div>
 
       <nav id="nav-above">
@@ -20,7 +20,16 @@
           <span> » </span>
           <span><a class="dummy" href="#">{{ post.title }}</a></span>
         </div>
-        <div class="nav-next"><a href="blog-single-2.html" rel="next">Next Post</a></div>
+        {% if next_post %}
+        <div class="nav-next">
+          <a href="{% url 'portfolio:post_detail' id=next_post.id %}" rel="next">Next Post</a>
+        </div>
+        {% endif %}
+        {% if previous_post %}
+        <div class="nav-previous">
+          <a href="{% url 'portfolio:post_detail' id=previous_post.id %}" rel="prev">Previous Post</a>
+        </div>
+        {% endif %}
       </nav>
 
       <div class="blog-recent-post-item row">
@@ -37,7 +46,7 @@
               {{ post.blockquote }}
             </p>
           </blockquote>
-       
+
           <div class="entry-meta">
             <span>By <a href="#">{{ post.created_by }}</a></span>
             <span><time class="entry-date">{{ post.date }}</time></span>

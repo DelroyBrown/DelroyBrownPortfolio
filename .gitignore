@@ -132,6 +132,7 @@ comments.html
 blog-single-1-copy.html
 blog-single-2.html
 blog-single-3.html
+kasheapaymentlogger.php
 # Visual Studio Code # 
 .vscode/* 
 !.vscode/settings.json 
