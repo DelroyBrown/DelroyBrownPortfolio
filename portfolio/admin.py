@@ -1,10 +1,6 @@
 from django.contrib import admin
-from .models import (Post,
-                     Experience,
-                     Skills,
-                     Certificates,
-                     Message
-                     )
+from .models import Post, Experience, Skills, Certificates, Message
+
 
 admin.site.register(Post)
 admin.site.register(Experience)

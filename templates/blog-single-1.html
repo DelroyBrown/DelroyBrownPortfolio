@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+
+
+
 
 <main>
   <section class="page">
@@ -16,9 +20,7 @@
         <div id="crumbs">
           <span><a class="blog-home" href="#">Home</a></span>
           <span> » </span>
-          <span><a class="dummy" href="#">Image</a></span>
-          <span> » </span>
-          <span><a class="dummy" href="#">{{ post.title }}</a></span>
+          <span>{{post.title}}</span>
         </div>
         {% if next_post %}
         <div class="nav-next">
@@ -41,20 +43,16 @@
           <p>
             {{ post.blog_body|safe }}
           </p>
-          <blockquote>
+          <!-- <blockquote>
             <p>
               {{ post.blockquote }}
             </p>
-          </blockquote>
+          </blockquote> -->
 
           <div class="entry-meta">
             <span>By <a href="#">{{ post.created_by }}</a></span>
             <span><time class="entry-date">{{ post.date }}</time></span>
-            <span class="cat-links">In
-              <a href="#" rel="category tag">Image</a>,
-              <a href="#" rel="category tag">Photography</a>,
-              <a href="#" rel="category tag">Blog</a>
-            </span>
+          
             <!-- <a href="#">3 Comments</a> -->
           </div>
         </div>
@@ -106,23 +104,11 @@
           </div>
         </aside>
       </div>
-      <footer>
-        <div class="row">
-          <div class="c12 end">
-            <div class="footer-inner">
-              <p class="copyright">© 2023 Delroy Brown by. All Rights Reserved.</p>
-              <ul class="social-footer">
-                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
-                <li><a href="#"><i class="lni lni-twitter"></i></a></li>
-                <li><a href="#"><i class="lni lni-facebook"></i></a></li>
-                <li><a href="#"><i class="lni lni-dribbble"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {% include "includes/footer.html" %}
 
     </div>
   </section><!--END BLOG-->
 </main>
+
 {% endblock content %}
+

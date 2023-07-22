@@ -1693,7 +1693,7 @@ input[type=submit]:active {
 
 .recent-post-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     outline: 1px solid #222;
     transition: opacity 300ms linear;
