@@ -10,7 +10,6 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("send_message/", send_email, name="send_message"),
     path("post/<int:id>/", views.post_detail, name="post_detail"),
-    path("portfolio/", views.portfolio, name="portfolio"),
 ]
 
 if settings.DEBUG:

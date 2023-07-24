@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Post, Experience, Skills, Certificates, Message, MyWork
+from .models import Post, Experience, Skills, Certificates, Message, MyWork, AboutMe
 
 
 def home(request):
@@ -10,16 +10,14 @@ def home(request):
         "posts": Post.objects.all().order_by("-date"),
         "experiences": Experience.objects.all(),
         "skills": Skills.objects.all(),
-        "certificates": Certificates.objects.all(),
+        "certificates": Certificates.objects.all().order_by("-certificate_completion_date"),
         "myworks": MyWork.objects.all(),
+        "aboutme": AboutMe.objects.all(),
     }
     return render(request, "index.html", context)
 
 
-def portfolio(request):
-    my_works = MyWork.objects.all()
-    print(my_works)
-    return render(request, 'index.html', {'myworks': my_works})
+
 
 
 def post_detail(request, id):

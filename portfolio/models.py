@@ -71,6 +71,10 @@ class MyWork(models.Model):
         return f"{self.project_title}"
 
 
+class AboutMe(models.Model):
+    about_me_blurb = RichTextField()
+
+
 class Message(models.Model):
     name = models.CharField(max_length=200, blank=False, null=False, default="")
     email = models.EmailField(max_length=200, blank=True, null=True, default="")

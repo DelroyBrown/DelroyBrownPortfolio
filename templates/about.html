@@ -25,12 +25,10 @@
                     <h5>Freelancer Extraordinaire</h5>
                     <hr>
                     <p>
-                        Hi, I'm Delroy Brown from Buckinghamshire, England. As a passionate full-stack developer, I
-                        seamlessly blend creativity and technical skills to create interactive and dynamic web
-                        experiences. My expertise spans HTML, CSS, and JavaScript for compelling front-end design,
-                        and Python, Django, and SQL for robust back-end construction. With proficiency in React and
-                        Angular, I can elevate your applications to the next level. Looking forward to demonstrating
-                        how my skills can benefit your team.
+                        {% for about in aboutme %}
+
+                        {{about.about_me_blurb|safe }}
+                        {% endfor %}
                         <span class="spacer"></span>
                         <a href="static/img/DelroyBrown_CV.pdf" class="button" download>Download CV <i
                                 class="lni lni-download"></i></a>
@@ -55,8 +53,8 @@
 
             <div class="c4">
                 <ul class="tabs-nav">
-                    <li><a href="#" id="tab1"><span>Programming Skills</span></a><span
-                            class="tab-background"></span></li>
+                    <li><a href="#" id="tab1"><span>Programming Skills</span></a><span class="tab-background"></span>
+                    </li>
                     <li><a href="#" id="tab2"><span>Certificates</span></a><span class="tab-background"></span></li>
                     <li><a href="#" id="tab3"><span>Experience</span></a><span class="tab-background"></span></li>
                 </ul>
