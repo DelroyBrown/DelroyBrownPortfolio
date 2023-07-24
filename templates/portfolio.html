@@ -9,7 +9,10 @@
             <h1 data-value="My work">My Work</h1>
             <ul class="portfolio-filter">
                 <li class='selected' data-target='all'>All</li>
-                <li data-target='javascript'>Javascript</li>
+                {% for mywork in myworks %}
+                <li data-target='{{mywork.nav_data_target}}'>{{mywork.nav_data_target}}</li>
+                {% endfor %}
+
                 <!-- <li data-target='django'>Django</li>
                 <li data-target='python'>Python</li>
                 <li data-target='react'>React</li> -->
@@ -28,14 +31,13 @@
                                 <a href="https://delroybrown.github.io/guessMyNumber/" target="_blank"></a>
                             </figcaption>
                         </figure>
-                        <div class="card-bottom-text">
-                            <p>"Guess My Number" is a fun, mellow and interactive game. A secret number is randomly
-                                generated and your mission is to guess it.
-                            </p>
+                        <p>
                             <a href="https://github.com/DelroyBrown/guessMyNumber/blob/main/js/script.js"
-                                target="_blank">Source Code</a>
-                        </div>
+                                target="_blank">Source Code
+                            </a>
+                        </p>
                     </li>
+
                     <li class="popup-image" data-groups='["all","javascript"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
                             <img src="{% static 'img/hit100.png' %}">
@@ -44,24 +46,40 @@
                                 <a href="https://delroybrown.github.io/Hit100/" target="_blank"></a>
                             </figcaption>
                         </figure>
-                        <div class="card-bottom-text">
-                            <p>"Hit100" is a dice game for two. Roll until you get a 1 or decide to hold. First
-                                to score 100 wins. 'New Game' restarts.
-                            </p>
+                        <p>
                             <a href="https://github.com/DelroyBrown/Hit100/blob/main/js/script.js"
-                                target="_blank">Source Code</a>
-                        </div>
+                                target="_blank">Source Code
+                            </a>
+                        </p>
                     </li>
-                    <!-- <li class="popup-image" data-groups='["all","python"]'>
+                    <li class="popup-image" data-groups='["all","wordpress"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
-                            <img src="{% static 'img/450x450.jpg' %}">
+                            <img src="{% static 'img/kasheacosmetics.png' %}" alt="Ka'Shea Cosmetics Logo">
                             <figcaption>
-                                <div data-value="Condimentum">Condimentum</div>
-                                <a href="{% static 'img/450x450.jpg' %}"></a>
+                                <div data-value="Ka'Shea Cosmetics">Ka'Shea Cosmetics</div>
+                                <a href="https://kasheacosmetics.co.uk/" target="_blank"></a>
                             </figcaption>
                         </figure>
                     </li>
-                    <li class="popup-iframe" data-groups='["all","django"]'>
+                    <li class="popup-image" data-groups='["all","wordpress"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/cincoskin.png' %}" alt="Cinco Skin Logo">
+                            <figcaption>
+                                <div data-value="Cinco Skin">Cinco Skin</div>
+                                <a href="https://cincoskin.com/" target="_blank"></a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li class="popup-image" data-groups='["all","wordpress"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{% static 'img/nueui.png' %}" alt="NueUi Logo">
+                            <figcaption>
+                                <div data-value="NueUi">NueUi</div>
+                                <a href="https://nueui.com/" target="_blank"></a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <!-- <li class="popup-iframe" data-groups='["all","django"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
                             <img src="{% static 'img/450x450.jpg' %}">
                             <figcaption>

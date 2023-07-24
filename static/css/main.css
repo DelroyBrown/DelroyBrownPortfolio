@@ -424,12 +424,16 @@ main {
     clear: both;
 }
 
-.card-bottom-text {
+.popup-image {
     text-align: left;
 }
 
-.card-bottom-text a {
+.popup-image p {
+    line-height: 0;
+}
+.popup-image p a {
     text-decoration: underline;
+    /* line-height: normal; */
 }
 
 /* ==========================================================================

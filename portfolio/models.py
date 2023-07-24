@@ -8,7 +8,9 @@ class Post(models.Model):
     image = models.ImageField(upload_to="posts/")
     blog_body = RichTextField()
     blockquote = models.TextField()
-    blog_list_description = models.TextField(max_length=1000, blank=False, null=False, default='')
+    blog_list_description = models.TextField(
+        max_length=1000, blank=False, null=False, default=""
+    )
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
 
@@ -52,6 +54,21 @@ class Certificates(models.Model):
 
     def __str__(self):
         return f"{self.certificate_title} from {self.certificate_aquired_through}"
+
+
+class MyWork(models.Model):
+    nav_data_target = models.CharField(
+        max_length=50, blank=False, null=False, default=""
+    )
+    image = models.ImageField(blank=False, null=False)
+    project_title = models.CharField(max_length=50, blank=False, null=False, default="")
+    project_link = models.CharField(max_length=100, blank=False, null=False, default="")
+    project_source_code_link = models.CharField(
+        max_length=100, blank=True, null=True, default=""
+    )
+
+    def __str__(self):
+        return f"{self.project_title}"
 
 
 class Message(models.Model):

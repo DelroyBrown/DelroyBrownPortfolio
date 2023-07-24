@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Post, Experience, Skills, Certificates, Message
+from .models import Post, Experience, Skills, Certificates, Message, MyWork
 
 
 def home(request):
@@ -11,18 +11,25 @@ def home(request):
         "experiences": Experience.objects.all(),
         "skills": Skills.objects.all(),
         "certificates": Certificates.objects.all(),
+        "myworks": MyWork.objects.all(),
     }
     return render(request, "index.html", context)
+
+
+def portfolio(request):
+    my_works = MyWork.objects.all()
+    print(my_works)
+    return render(request, 'index.html', {'myworks': my_works})
 
 
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     next_post = Post.objects.filter(id__gt=post.id).order_by("id").first()
-    previous_post = Post.objects.filter(id__lt=post.id).order_by('-id').first()
+    previous_post = Post.objects.filter(id__lt=post.id).order_by("-id").first()
     context = {
-        "post" : post,
-        "next_post" : next_post,
-        "previous_post" : previous_post,
+        "post": post,
+        "next_post": next_post,
+        "previous_post": previous_post,
     }
     return render(request, "blog-single-1.html", context)
 
