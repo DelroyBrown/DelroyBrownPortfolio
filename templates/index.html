@@ -21,6 +21,21 @@
             <div class="logo">
                 <a href="#home"><img src="{% static 'img/logo.png' %}" alt="Delroy J. Brown"></a>
             </div>
+
+            <!-- MUSIC PLAYER -->
+            <div class="music-player-container">
+                <audio id="myAudio">
+                    <source src="{% static 'audio/lofi.mp3' %}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <button class="music-player-buttons" id="playBtn">
+                    <img src="{% static 'img/play.png' %}" alt="play">
+                </button>
+                <button class="music-player-buttons" id="stopBtn" style="display: none;">
+                    <img src="{% static 'img/stop.png' %}" alt="stop">
+                </button>
+            </div>
+
             <ul class="social">
                 <li><a target="_blank" href="https://www.instagram.com/delroyjbrown"><i
                             class="lni lni-instagram"></i></a></li>
@@ -30,6 +45,7 @@
                 <li><a target="_blank" href="https://www.dribbble.com/"><i class="lni lni-dribbble"></i></a></li> -->
             </ul>
         </header>
+
 
         <div class="content" style="display: block;">
             <div>

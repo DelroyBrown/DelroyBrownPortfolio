@@ -291,6 +291,7 @@ textarea {
     scrollbar-color: rgba(22, 22, 22, 1) rgba(22, 22, 22, 0);
 }
 
+
 /* ==========================================================================
       3. Layout
       ========================================================================== */
@@ -431,10 +432,38 @@ main {
 .popup-image p {
     line-height: 0;
 }
+
 .popup-image p a {
     text-decoration: underline;
     /* line-height: normal; */
 }
+
+/* ==========================================================================
+      Music player
+      ========================================================================== */
+
+.music-player-container {
+    width: 79px;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    padding: 10px 0px;
+}
+
+.music-player-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.music-player-buttons {
+    background-color: transparent;
+    border: none;
+}
+
+
 
 /* ==========================================================================
       3.1 Mouse Trailer
@@ -2211,7 +2240,7 @@ textarea:focus-visible {
 }
 
 .message-sent {
-    
+
     display: none;
     align-items: center;
     justify-content: center;
