@@ -2568,6 +2568,22 @@ textarea:focus-visible {
         padding: 0;
     }
 
+    .music-player-container {
+        width: fit-content;
+    }
+
+    .music-player-buttons {
+        display: flex;
+        justify-content: center;
+        width: 55px;
+    }
+
+    .music-player-container img {
+        max-width: 55px;
+    }
+
+
+
     .portfolio-filter li:first-child {
         margin-left: -10px;
     }

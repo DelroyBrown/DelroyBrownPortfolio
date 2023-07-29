@@ -20,7 +20,9 @@
                     <img src="{{ post.image.url }}" alt="{{ post.title }}">
                     <span class="date"><span class="day">{{ post.date|date:"d"}}</span> {{ post.date|date:"F Y"}}</span>
                 </a>
-                <h2 class="gamma entry-title"><a href="blog-single-1.html" rel="">{{ post.title }}</a></h2>
+                <h2 class="gamma entry-title">
+                    <a href="{% url 'portfolio:post_detail' id=post.id %}" rel="">{{ post.title }}</a>
+                </h2>
                 <p>{{ post.blog_list_description }}</p>
                 <div class="entry-meta">
                     <span>By {{ post.created_by }}</span>
