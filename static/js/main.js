@@ -15,25 +15,39 @@ $(function() {
    		Map
    	   ========================================================================== */
 
-	let mapOptions = {
-        center:[51.6286, 0.7482],
-        zoom:13,
-    }
-    let map = new L.map(document.getElementById("map") , mapOptions);
-    let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a  target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' });
-    map.addLayer(layer);
-
-    let customIcon = {
-      iconUrl:"/static/img/map-marker.png",
-      iconSize:[57,67]
-    }
-    let myIcon = L.icon(customIcon);
-    let iconOptions = {
-        title:"Akordian",
-        icon:myIcon
-    }
-    let marker = new L.Marker(mapOptions.center , iconOptions);
-    marker.addTo(map);
+		  let mapOptions = {
+			zoom: 13,
+		}
+		
+		let map = new L.map(document.getElementById("map"), mapOptions);
+		
+		let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+			attribution: '&copy; <a  target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' 
+		});
+		
+		map.addLayer(layer);
+		
+		let customIcon = {
+			iconUrl:"/static/img/map-marker.png",
+			iconSize:[57,67]
+		}
+		
+		let myIcon = L.icon(customIcon);
+		
+		let markerPosition = [51.8072, 0.8128];  // High Wycombe, Buckinghamshire
+		
+		let iconOptions = {
+			title: "Akordian",
+			icon: myIcon
+		}
+		
+		let marker = new L.Marker(markerPosition, iconOptions);
+		
+		marker.addTo(map);
+		
+		// Center the map on the marker
+		map.setView(markerPosition, mapOptions.zoom);
+		
 
 
 	/* ==========================================================================
