@@ -108,7 +108,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-CKEDITOR_UPLOAD_PATH = "blog_post_uploads/"
+CKEDITOR_UPLOAD_PATH = "/blog_post_images"
 
 if "USE_AWS" in os.environ:
     # Cache Control
@@ -137,19 +137,30 @@ if "USE_AWS" in os.environ:
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-            'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source'],
-            ['CodeSnippet'], 
+    "default": {
+        "toolbar": "Custom",
+        "toolbar_Custom": [
+            ["Bold", "Italic", "Underline"],
+            [
+                "NumberedList",
+                "BulletedList",
+                "-",
+                "Outdent",
+                "Indent",
+                "-",
+                "JustifyLeft",
+                "JustifyCenter",
+                "JustifyRight",
+                "JustifyBlock",
+            ],
+            ["Link", "Unlink"],
+            ["RemoveFormat", "Source"],
+            ["CodeSnippet"],
         ],
-        'extraPlugins': ','.join(['codesnippet']),
-        # 'codeSnippet_theme': 'monokai_sublime',
+        "extraPlugins": ",".join(
+            [
+                "codesnippet",
+            ]
+        ),
     }
 }
-
-

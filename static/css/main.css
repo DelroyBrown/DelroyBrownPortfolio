@@ -74,6 +74,7 @@ hr {
     height: 0
 }
 
+
 mark {
     background: #ff0;
     color: #000
@@ -971,6 +972,33 @@ h6,
     letter-spacing: 0.5px;
 }
 
+.currently-updating-text {
+    font-size: 20px;
+    line-height: 0.8;
+    font-weight: 700;
+    margin-left: 12px;
+    color: red;
+    opacity: 0;
+    animation-name: updating-text-flash;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+    animation-delay: 1.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes updating-text-flash {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
 .mega {
     font-family: 'Montserrat', sans-serif;
     font-size: max(7vw, 45px);
@@ -2580,6 +2608,14 @@ textarea:focus-visible {
 
     .music-player-container img {
         max-width: 55px;
+    }
+
+    .currently-updating-text {
+        font-size: 12px;
+        line-height: 0.8;
+        font-weight: 700;
+        margin: 0px 0px -12px 1px;
+        color: red;
     }
 
 
