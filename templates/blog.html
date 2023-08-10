@@ -1,46 +1,61 @@
 {% load static %}
 <section class="page" id="blog">
-    <header>
-        <span class="title">Blog</span>
-        <span class="title-number">03</span>
-    </header>
-    <div class="content grid">
+  <header>
+    <span class="title">Blog</span>
+    <span class="title-number">03</span>
+  </header>
+  <div class="content grid">
+    <div class="page-header c12">
+      <h1 data-value="Latest News">Latest News</h1>
+      <!-- <span class="toggle-sidebar"><i></i></span> -->
+      <hr />
+    </div>
 
-        <div class="page-header c12">
-            <h1 data-value="Latest News">Latest News</h1>
-            <!-- <span class="toggle-sidebar"><i></i></span> -->
-            <hr>
-        </div>
-
-        <!-- BLOG POSTS -->
-        {% for post in posts %}
-        <div class="blog-recent-post-item row">
-            <div class="c12 end">
-                <a class="recent-post-img" href="{% url 'portfolio:post_detail' id=post.id %}" rel="">
-                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
-                    <span class="date"><span class="day">{{ post.date|date:"d"}}</span> {{ post.date|date:"F Y"}}</span>
-                </a>
-                <h2 class="gamma entry-title">
-                    <a href="{% url 'portfolio:post_detail' id=post.id %}" rel="">{{ post.title }}</a>
-                </h2>
-                <p>{{ post.blog_list_description }}</p>
-                <div class="entry-meta">
-                    <span>By {{ post.created_by }}</span>
-                    <span><time class="entry-date" datetime="2013-11-17T09:00:33+00:00">{{ post.date|date:"D d F Y" }}
-                    </time></span>
-                    <!-- <span class="cat-links">In
+    <!-- BLOG POSTS -->
+    {% for post in posts %}
+    <div class="blog-recent-post-item row">
+      <div class="c12 end">
+        <a
+          class="recent-post-img"
+          href="{% url 'portfolio:post_detail' id=post.id %}"
+          rel=""
+        >
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+          <span class="date"
+            ><span class="day">{{ post.date|date:"d"}}</span> {{
+            post.date|date:"F Y"}}</span
+          >
+        </a>
+        <h2 class="gamma entry-title">
+          <a href="{% url 'portfolio:post_detail' id=post.id %}" rel=""
+            >{{ post.title }}</a
+          >
+        </h2>
+        <p>{{ post.blog_list_description }}</p>
+        <div class="entry-meta">
+          <span>By {{ post.created_by }}</span>
+          <span
+            ><time class="entry-date" datetime="2013-11-17T09:00:33+00:00"
+              >{{ post.date|date:"D d F Y" }}
+            </time></span
+          >
+          <!-- <span class="cat-links">In
                         <a class="dummy" href="#" rel="category tag">Image</a>,
                         <a class="dummy" href="#" rel="category tag">Photography</a>,
                         <a class="dummy" href="#" rel="category tag">Blog</a>
                     </span>
                     <a class="dummy" href="#">25 Comments</a> -->
-                    <a class="readmore" href="{% url 'portfolio:post_detail' id=post.id %}">Read more</a>
-                </div>
-            </div>
+          <a
+            class="readmore"
+            href="{% url 'portfolio:post_detail' id=post.id %}"
+            >Read more</a
+          >
         </div>
-        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
 
-        <!-- <div class="blog-recent-post-item row">
+    <!-- <div class="blog-recent-post-item row">
             <div class="c12 end">
                 <a class="recent-post-img" href="blog-single-2.html" rel="">
                     <img src="{% static 'img/1900x650.jpg' %}" alt="Blog">
@@ -67,7 +82,7 @@
                 </div>
             </div>
         </div> -->
-        <!-- <div class="blog-recent-post-item row">
+    <!-- <div class="blog-recent-post-item row">
             <div class="c12 end">
                 <a class="recent-post-img" href="blog-single-3.html" rel="">
                     <img src="{% static 'img/1900x650.jpg' %}" alt="Blog">
@@ -95,8 +110,7 @@
             </div>
         </div> -->
 
-
-        <!-- <div id="sidebar">
+    <!-- <div id="sidebar">
             <aside>
 
                 <form role="search" id="searchform" class="searchform" onsubmit="return false;">
@@ -141,6 +155,9 @@
                 </div>
             </aside>
         </div> -->
-        {% include "includes/footer.html" %}
-    </div><!--END CONTENT-->
+    {% include "includes/footer.html" %}
+  </div>
+  <!--END CONTENT-->
 </section>
+
+

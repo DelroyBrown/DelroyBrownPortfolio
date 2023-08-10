@@ -10,14 +10,13 @@ def home(request):
         "posts": Post.objects.all().order_by("-date"),
         "experiences": Experience.objects.all(),
         "skills": Skills.objects.all(),
-        "certificates": Certificates.objects.all().order_by("-certificate_completion_date"),
+        "certificates": Certificates.objects.all().order_by(
+            "-certificate_completion_date"
+        ),
         "myworks": MyWork.objects.all(),
         "aboutme": AboutMe.objects.all(),
     }
     return render(request, "index.html", context)
-
-
-
 
 
 def post_detail(request, id):

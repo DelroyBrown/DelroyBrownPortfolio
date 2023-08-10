@@ -1,10 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-
-
-
-
 <main>
   <section class="page">
     <header>
@@ -40,19 +37,14 @@
           <p class="gamma entry-title" style="font-size: 20px;">
             {{ post.title }}
           </p>
-          <p>
+          <div id="textarea" contenteditable="true">
             {{ post.blog_body|safe }}
-          </p>
-          <!-- <blockquote>
-            <p>
-              {{ post.blockquote }}
-            </p>
-          </blockquote> -->
-
+          </div>
+          
           <div class="entry-meta">
             <span>By <a href="#">{{ post.created_by }}</a></span>
             <span><time class="entry-date">{{ post.date }}</time></span>
-          
+
             <!-- <a href="#">3 Comments</a> -->
           </div>
         </div>
@@ -109,6 +101,5 @@
     </div>
   </section><!--END BLOG-->
 </main>
-
 {% endblock content %}
 
