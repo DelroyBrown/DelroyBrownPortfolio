@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "ckeditor",
     "storages",
     "tinymce",
     "portfolio",
@@ -110,39 +111,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-TINYMCE_DEFAULT_CONFIG = {
-    "height": 360,
-    "width": 840,
-    "cleanup_on_startup": True,
-    "custom_undo_redo_levels": 20,
-    "selector": "textarea",
-    "theme": "modern",
-    "plugins": """
-            textcolor save link image media preview codesample contextmenu
-            table code lists fullscreen  insertdatetime  nonbreaking
-            contextmenu directionality searchreplace wordcount visualblocks
-            visualchars code fullscreen autolink lists  charmap print  hr
-            anchor pagebreak
-            """,
-    "toolbar1": """
-            fullscreen preview bold italic underline | fontselect,
-            fontsizeselect  | forecolor backcolor | alignleft aligncenter 
-            alignright alignjustify  | indent outdent | bullist numlist table | 
-            link image media | codesample |
-            """,
-    "contextmenu": "formats | link image",
-    "menubar": True,
-    "statusbar": True,
-    "codesample_dialog_height": 400,
-    "codesample_dialog_width": 600,
-    "codesample_languages": [
-        {"id": "python", "name": "Python"},
-        {"id": "javascript", "name": "JavaScript"},
-        {"id": "markup", "name": "HTML/XML"},
-        {"id": "css", "name": "CSS"},
-    ],
-}
-
 
 if "USE_AWS" in os.environ:
     # Cache Control
@@ -169,6 +137,10 @@ if "USE_AWS" in os.environ:
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
 
 CKEDITOR_CONFIGS = {
     "default": {
