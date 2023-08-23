@@ -1,12 +1,13 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 from django.contrib.auth.models import User
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to="posts/")
-    blog_body = RichTextField()
+    # blog_body = models.TextField(max_length=5000, blank=False, null=False, default='')
+    blog_body = HTMLField(blank=False, null=False, default='')
     blog_list_description = models.TextField(
         max_length=1000, blank=False, null=False, default=""
     )
@@ -33,6 +34,9 @@ class Skills(models.Model):
     skill = models.CharField(max_length=50, blank=True, null=True, default="")
     skill_percentage = models.IntegerField()
 
+    class Meta:
+        verbose_name_plural = 'Skills'
+
     def __str__(self):
         return f"{self.skill} {self.skill_percentage}%"
 
@@ -51,27 +55,36 @@ class Certificates(models.Model):
         max_length=50, blank=True, null=True, default=""
     )
 
+    class Meta:
+        verbose_name_plural = 'Certificates'
+
     def __str__(self):
         return f"{self.certificate_title} from {self.certificate_aquired_through}"
 
 
 class MyWork(models.Model):
     nav_data_target = models.CharField(
-        max_length=50, blank=False, null=False, default=""
+        max_length=50, blank=True, null=True, default=""
     )
-    image = models.ImageField(blank=False, null=False)
-    project_title = models.CharField(max_length=50, blank=False, null=False, default="")
-    project_link = models.CharField(max_length=100, blank=False, null=False, default="")
+    image = models.ImageField(blank=True, null=True)
+    project_title = models.CharField(max_length=50, blank=True, null=True, default="")
+    project_link = models.CharField(max_length=100, blank=True, null=True, default="")
     project_source_code_link = models.CharField(
         max_length=100, blank=True, null=True, default=""
     )
+
+    class Meta:
+        verbose_name_plural = 'My Work'
 
     def __str__(self):
         return f"{self.project_title}"
 
 
 class AboutMe(models.Model):
-    about_me_blurb = RichTextField()
+    about_me_blurb = models.TextField(max_length=5000, blank=True, null=True, default='')
+
+    class Meta:
+        verbose_name_plural = 'About Me'
 
 
 class Message(models.Model):

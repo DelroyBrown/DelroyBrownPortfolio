@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "ckeditor",
+    "tinymce",
     "storages",
     "portfolio",
 ]
@@ -60,16 +60,16 @@ TEMPLATES = [
 WSGI_APPLICATION = "protfolio_final_base.wsgi.application"
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 config = Config(os.path.dirname(os.path.abspath(__file__)))
 
-DATABASES = {"default": dj_database_url.config("DATABASE_URL")}
+# DATABASES = {"default": dj_database_url.config("DATABASE_URL")}
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -137,35 +137,28 @@ if "USE_AWS" in os.environ:
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_IMAGE_BACKEND = "pillow"
-
-
-CKEDITOR_CONFIGS = {
-    "default": {
-        "toolbar": "Custom",
-        "toolbar_Custom": [
-            ["Bold", "Italic", "Underline"],
-            [
-                "NumberedList",
-                "BulletedList",
-                "-",
-                "Outdent",
-                "Indent",
-                "-",
-                "JustifyLeft",
-                "JustifyCenter",
-                "JustifyRight",
-                "JustifyBlock",
-            ],
-            ["Link", "Unlink"],
-            ["RemoveFormat", "Source"],
-            ["CodeSnippet"],
-        ],
-        "extraPlugins": ",".join(
-            [
-                "codesnippet",
-            ]
-        ),
-    }
+TINYMCE_DEFAULT_CONFIG = {
+    "height": 360,
+    "width": 960,
+    "cleanup_on_startup": True,
+    "custom_undo_redo_levels": 10,
+    "selector": "textarea",
+    "theme": "silver",
+    "plugins": "codesample textcolor lists code",  # Added 'lists' to plugins
+    "toolbar": "undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | outdent indent | bullist numlist | code codesample",
+    "menubar": False,
+    "statusbar": True,
+    "style_formats": [
+        {
+            "title": "Custom Background",
+            "block": "div",
+            "classes": "custom-bg",
+            "wrapper": True,
+        }
+    ],
+    "content_css": ["css/codesnippets.css"],
 }
+
+
+TINYMCE_SPELLCHECKER = False
+TINYMCE_COMPRESSOR = False

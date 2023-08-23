@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
 
-{% block content %}
+
 <main>
   <section class="page">
     <header>
@@ -21,12 +21,17 @@
         </div>
         {% if next_post %}
         <div class="nav-next">
-          <a href="{% url 'portfolio:post_detail' id=next_post.id %}" rel="next">Next Post</a>
+          <a href="{% url 'portfolio:post_detail' id=next_post.id %}" rel="next"
+            >Next Post</a
+          >
         </div>
-        {% endif %}
-        {% if previous_post %}
+        {% endif %} {% if previous_post %}
         <div class="nav-previous">
-          <a href="{% url 'portfolio:post_detail' id=previous_post.id %}" rel="prev">Previous Post</a>
+          <a
+            href="{% url 'portfolio:post_detail' id=previous_post.id %}"
+            rel="prev"
+            >Previous Post</a
+          >
         </div>
         {% endif %}
       </nav>
@@ -34,13 +39,11 @@
       <div class="blog-recent-post-item row">
         <div class="c12 end">
           <p><img class="feature" src="{{ post.image.url }}" /></p>
-          <p class="gamma entry-title" style="font-size: 20px;">
+          <p class="gamma entry-title" style="font-size: 20px">
             {{ post.title }}
           </p>
-          <div id="textarea" contenteditable="true">
-            {{ post.blog_body|safe }}
-          </div>
-          
+          <div>{{ post.blog_body|safe }}</div>
+
           <div class="entry-meta">
             <span>By <a href="#">{{ post.created_by }}</a></span>
             <span><time class="entry-date">{{ post.date }}</time></span>
@@ -53,11 +56,16 @@
       <!-- COMMENTS IN SEPARATE FILE -->
       <div id="sidebar">
         <aside>
-          <form role="search" id="searchform" class="searchform" onsubmit="return false;">
+          <form
+            role="search"
+            id="searchform"
+            class="searchform"
+            onsubmit="return false;"
+          >
             {% csrf_token %}
             <div>
-              <input type="text" name="s" id="s" placeholder="Search for:">
-              <input type="submit" id="searchsubmit">
+              <input type="text" name="s" id="s" placeholder="Search for:" />
+              <input type="submit" id="searchsubmit" />
               <i class="lni lni-search-alt"></i>
             </div>
           </form>
@@ -74,8 +82,11 @@
         </aside>
         <aside>
           <h6 class="widget-title">Text Widget</h6>
-          <p class="textwidget">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum diam
-            justo, eget consequat mauris blandit vitae.</p>
+          <p class="textwidget">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque bibendum diam justo, eget consequat mauris blandit
+            vitae.
+          </p>
         </aside>
         <aside>
           <h6 class="widget-title">Categories</h6>
@@ -89,17 +100,17 @@
         <aside>
           <h6 class="widget-title">Tags</h6>
           <div class="tagcloud">
-            <a href="#" style="font-size: 15.777777777778pt;">Image</a>
-            <a href="#" style="font-size: 8pt;">Design</a>
-            <a href="#" style="font-size: 22pt;">Photography</a>
-            <a href="#" style="font-size: 15.777777777778pt;">Blog</a>
+            <a href="#" style="font-size: 15.777777777778pt">Image</a>
+            <a href="#" style="font-size: 8pt">Design</a>
+            <a href="#" style="font-size: 22pt">Photography</a>
+            <a href="#" style="font-size: 15.777777777778pt">Blog</a>
           </div>
         </aside>
       </div>
       {% include "includes/footer.html" %}
-
     </div>
-  </section><!--END BLOG-->
+  </section>
+  <!--END BLOG-->
 </main>
-{% endblock content %}
 
+{% endblock content %}

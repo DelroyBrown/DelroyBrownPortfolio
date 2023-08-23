@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 
+
 <div class="mouse regular"></div>
 <nav class="mobile-nav">
     <ul>
@@ -76,4 +77,16 @@
     {% include "contact.html" %}
     <!--END CONTACT PAGE-->
 </main>
+
+<script src="{% static 'js/prism.js' %}"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll("pre code").forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+
 {% endblock content %}

@@ -12,40 +12,49 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="{% static 'css/prism.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&family=Space+Mono:wght@400;700"
         as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="{% static 'img/background.jpg' %}" as="image">
-    <link rel="stylesheet"
+        <link rel="preload" href="{% static 'img/background.jpg' %}" as="image">
+        <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&family=Space+Mono:wght@400;700">
-    <link rel="stylesheet" href="{% static 'css/lineicons.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/imagehover.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/leaflet.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+        
+        <link rel="stylesheet" href="{% static 'css/lineicons.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/imagehover.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/leaflet.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/prism.css' %}">
+        <link rel="stylesheet" href="{% static 'css/codesnippets.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+
+
 </head>
 
 <body>
     {% block content %}
+    
+    
     {% endblock content %}
 
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-    <script src="{% static 'tinymce/jquery.tinymce.min.js' %}"></script>
-    <script src="{% static 'tinymce/themes/silver/theme.min.js' %}"></script>
-    <script src="{% static 'tinymce/plugins/codesample/plugin.min.js' %}"></script>
-
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/leaflet.js' %}"></script>
-    <script src="{% static 'js/prism.js' %}"></script>
     <script src="{% static 'js/musicPlayer.js' %}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script> -->
 
 
-
+   
 </body>
 
 </html>
