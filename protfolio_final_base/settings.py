@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "tinymce",
+    "ckeditor",
     "storages",
     "portfolio",
 ]
@@ -137,28 +137,3 @@ if "USE_AWS" in os.environ:
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-TINYMCE_DEFAULT_CONFIG = {
-    "height": 360,
-    "width": 960,
-    "cleanup_on_startup": True,
-    "custom_undo_redo_levels": 10,
-    "selector": "textarea",
-    "theme": "silver",
-    "plugins": "codesample textcolor lists code",  # Added 'lists' to plugins
-    "toolbar": "undo redo | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | outdent indent | bullist numlist | code codesample",
-    "menubar": False,
-    "statusbar": True,
-    "style_formats": [
-        {
-            "title": "Custom Background",
-            "block": "div",
-            "classes": "custom-bg",
-            "wrapper": True,
-        }
-    ],
-    "content_css": ["css/codesnippets.css"],
-}
-
-
-TINYMCE_SPELLCHECKER = False
-TINYMCE_COMPRESSOR = False

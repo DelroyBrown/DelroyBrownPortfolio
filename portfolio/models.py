@@ -1,5 +1,5 @@
 from django.db import models
-from tinymce.models import HTMLField
+from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
 
@@ -7,7 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to="posts/")
     # blog_body = models.TextField(max_length=5000, blank=False, null=False, default='')
-    blog_body = HTMLField(blank=False, null=False, default='')
+    blog_body = RichTextField(max_length=5000, blank=False, null=False, default='')
     blog_list_description = models.TextField(
         max_length=1000, blank=False, null=False, default=""
     )
