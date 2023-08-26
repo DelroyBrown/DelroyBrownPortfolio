@@ -60,16 +60,16 @@ TEMPLATES = [
 WSGI_APPLICATION = "protfolio_final_base.wsgi.application"
 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 config = Config(os.path.dirname(os.path.abspath(__file__)))
 
-DATABASES = {"default": dj_database_url.config("DATABASE_URL")}
+# DATABASES = {"default": dj_database_url.config("DATABASE_URL")}
 
 
 AUTH_PASSWORD_VALIDATORS = [

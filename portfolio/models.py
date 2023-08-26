@@ -61,11 +61,17 @@ class Certificates(models.Model):
     def __str__(self):
         return f"{self.certificate_title} from {self.certificate_aquired_through}"
 
-
-class MyWork(models.Model):
+class NavDataTarget(models.Model):
     nav_data_target = models.CharField(
         max_length=50, blank=True, null=True, default=""
     )
+
+    def __str__(self):
+        return self.nav_data_target
+
+
+class MyWork(models.Model):
+    data_target = models.ForeignKey(NavDataTarget, on_delete=models.CASCADE, blank=False, null=False)
     image = models.ImageField(blank=True, null=True)
     project_title = models.CharField(max_length=50, blank=True, null=True, default="")
     project_link = models.CharField(max_length=100, blank=True, null=True, default="")

@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Post, Experience, Skills, Certificates, Message, MyWork, AboutMe
+from .models import Post, Experience, Skills, Certificates, Message, MyWork, AboutMe, NavDataTarget
 
 
 def home(request):
@@ -14,6 +14,7 @@ def home(request):
             "-certificate_completion_date"
         ),
         "myworks": MyWork.objects.all(),
+        "navDataTargets": NavDataTarget.objects.all(),
         "aboutme": AboutMe.objects.all(),
     }
     return render(request, "index.html", context)

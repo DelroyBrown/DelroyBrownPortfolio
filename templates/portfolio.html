@@ -9,8 +9,8 @@
             <h1 data-value="My work">My Work</h1>
             <ul class="portfolio-filter">
                 <li class='selected' data-target='all'>All</li>
-                {% for mywork in myworks %}
-                <li data-target='{{mywork.nav_data_target}}'>{{mywork.nav_data_target}}</li>
+                {% for navDataTarget in navDataTargets  %}
+                <li data-target='{{navDataTarget.nav_data_target}}'>{{navDataTarget.nav_data_target}}</li>
                 {% endfor %}
 
                 <!-- <li data-target='django'>Django</li>
@@ -25,7 +25,7 @@
 
                     {% for mywork in myworks  %}
                       
-                    <li class="popup-image" data-groups='["all","{{mywork.nav_data_target}}"]'>
+                    <li class="popup-image" data-groups='["all","{{mywork.data_target}}"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
                             <img src="{{mywork.image.url}}">
                             <figcaption>
