@@ -34,9 +34,11 @@
                             </figcaption>
                         </figure>
                         <p>
+                            {% if mywork.project_source_code_link %}
                             <a href="{{mywork.project_source_code_link}}"
                                 target="_blank">Source Code
                             </a>
+                            {% endif %}
                         </p>
                     </li>
                     {% endfor %}
