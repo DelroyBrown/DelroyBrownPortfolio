@@ -23,7 +23,24 @@
             <div class="c12 end">
                 <ul class="portfolio-container">
 
-                    <li class="popup-image" data-groups='["all","javascript"]'>
+                    {% for mywork in myworks  %}
+                      
+                    <li class="popup-image" data-groups='["all","{{mywork.nav_data_target}}"]'>
+                        <figure class="imghvr-shutter-in-out-diag-1">
+                            <img src="{{mywork.image.url}}">
+                            <figcaption>
+                                <div data-value="{{mywork.project_title}}">{{ mywork.project_title }}</div>
+                                <a href="{{mywork.project_link}}" target="_blank"></a>
+                            </figcaption>
+                        </figure>
+                        <p>
+                            <a href="{{mywork.project_source_code_link}}"
+                                target="_blank">Source Code
+                            </a>
+                        </p>
+                    </li>
+                    {% endfor %}
+                    <!-- <li class="popup-image" data-groups='["all","javascript"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
                             <img src="{% static 'img/guessmynumber.png' %}">
                             <figcaption>
@@ -78,7 +95,7 @@
                                 <a href="https://nueui.com/" target="_blank"></a>
                             </figcaption>
                         </figure>
-                    </li>
+                    </li> -->
                     <!-- <li class="popup-iframe" data-groups='["all","django"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
                             <img src="{% static 'img/450x450.jpg' %}">
