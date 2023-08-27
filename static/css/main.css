@@ -987,18 +987,19 @@ h6,
 }
 
 @keyframes updating-text-flash {
-	0% {
-		opacity: 1;
-	}
+    0% {
+        opacity: 1;
+    }
 
-	50% {
-		opacity: 0.2;
-	}
+    50% {
+        opacity: 0.2;
+    }
 
-	100% {
-		opacity: 1;
-	}
+    100% {
+        opacity: 1;
+    }
 }
+
 .mega {
     font-family: 'Montserrat', sans-serif;
     font-size: max(7vw, 45px);
@@ -1619,6 +1620,34 @@ input[type=submit]:active {
       6. Portfolio
       ========================================================================== */
 
+.source-code-wrap {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+.readme_file {
+    border: none !important;
+    margin: 0;
+}
+
+.readme-popup {
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    width: 300px;
+    z-index: 1;
+}
+
+.source-code-wrap a,
+.readme_file {
+    margin-right: 15px;
+}
+
 .portfolio-filter {
     margin: 0;
     padding: 0;
@@ -1662,7 +1691,7 @@ input[type=submit]:active {
 }
 
 .portfolio-container li a {
-    position: absolute;
+    /* position: absolute; */
     z-index: 100;
 }
 
