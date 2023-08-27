@@ -7,7 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to="posts/")
     # blog_body = models.TextField(max_length=5000, blank=False, null=False, default='')
-    blog_body = RichTextField(max_length=5000, blank=False, null=False, default='')
+    blog_body = RichTextField(max_length=5000, blank=False, null=False, default="")
     blog_list_description = models.TextField(
         max_length=1000, blank=False, null=False, default=""
     )
@@ -35,7 +35,7 @@ class Skills(models.Model):
     skill_percentage = models.IntegerField()
 
     class Meta:
-        verbose_name_plural = 'Skills'
+        verbose_name_plural = "Skills"
 
     def __str__(self):
         return f"{self.skill} {self.skill_percentage}%"
@@ -56,22 +56,23 @@ class Certificates(models.Model):
     )
 
     class Meta:
-        verbose_name_plural = 'Certificates'
+        verbose_name_plural = "Certificates"
 
     def __str__(self):
         return f"{self.certificate_title} from {self.certificate_aquired_through}"
 
+
 class NavDataTarget(models.Model):
-    nav_data_target = models.CharField(
-        max_length=50, blank=True, null=True, default=""
-    )
+    nav_data_target = models.CharField(max_length=50, blank=True, null=True, default="")
 
     def __str__(self):
         return self.nav_data_target
 
 
 class MyWork(models.Model):
-    data_target = models.ForeignKey(NavDataTarget, on_delete=models.CASCADE, blank=False, null=False)
+    data_target = models.ForeignKey(
+        NavDataTarget, on_delete=models.CASCADE, blank=False, null=False
+    )
     image = models.ImageField(blank=True, null=True)
     project_title = models.CharField(max_length=50, blank=True, null=True, default="")
     project_link = models.CharField(max_length=100, blank=True, null=True, default="")
@@ -80,17 +81,18 @@ class MyWork(models.Model):
     )
 
     class Meta:
-        verbose_name_plural = 'My Work'
+        verbose_name_plural = "My Work"
 
     def __str__(self):
         return f"{self.project_title}"
 
 
 class AboutMe(models.Model):
-    about_me_blurb = RichTextField(max_length=5000, blank=True, null=True, default='')
+    about_me_blurb = RichTextField(max_length=5000, blank=True, null=True, default="")
+    download_cv = models.FileField(blank=True, null=True)
 
     class Meta:
-        verbose_name_plural = 'About Me'
+        verbose_name_plural = "About Me"
 
 
 class Message(models.Model):

@@ -28,10 +28,10 @@
                         {% for about in aboutme %}
 
                         {{about.about_me_blurb|safe }}
-                        {% endfor %}
                         <span class="spacer"></span>
-                        <a href="static/img/DelroyBrown_CV.pdf" class="button" download>Download CV <i
-                                class="lni lni-download"></i></a>
+                        <a href="{{about.download_cv}}" class="button" download>Download CV <i
+                            class="lni lni-download"></i></a>
+                            {% endfor %}
                     </p>
                 </div>
 
