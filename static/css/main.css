@@ -1628,15 +1628,7 @@ input[type=submit]:active {
     height: fit-content;
 }
 
-.readme_file {
-    border: none !important;
-    margin: 0;
-}
-
-
-
-.source-code-wrap a,
-.readme_file {
+.source-code-wrap a {
     margin-right: 15px;
 }
 
