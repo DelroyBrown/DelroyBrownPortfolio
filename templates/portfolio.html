@@ -37,37 +37,12 @@
                             {% if mywork.project_source_code_link %}
                                 <a href="{{mywork.project_source_code_link}}" target="_blank">Source Code</a>
                                 <img class="readme_file" src="{% static 'img/readmeicon.png' %}" alt="README.MD" style="width: 20px;">
-                                <div class="readme-popup" id="readmePopup">
-                                    <!-- README content will go here -->
                                 </div>
                             {% endif %}
                         </p>
                     </li>
                     {% endfor %}
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            const readmeFileElement = document.querySelector('.readme_file');
-                            const readmePopupElement = document.getElementById('readmePopup');
-                        
-                            // Fetch README content (replace with your actual README URL)
-                            fetch('README.md')
-                                .then(response => response.text())
-                                .then(data => {
-                                    readmePopupElement.innerHTML = data;
-                                });
-                        
-                            // Show popup on hover
-                            readmeFileElement.addEventListener('mouseover', function() {
-                                readmePopupElement.style.display = 'block';
-                            });
-                        
-                            // Hide popup when not hovering
-                            readmeFileElement.addEventListener('mouseout', function() {
-                                readmePopupElement.style.display = 'none';
-                            });
-                        });
-                        
-                    </script>
+                    
                     <!-- <li class="popup-image" data-groups='["all","javascript"]'>
                         <figure class="imghvr-shutter-in-out-diag-1">
                             <img src="{% static 'img/guessmynumber.png' %}">

@@ -1633,15 +1633,7 @@ input[type=submit]:active {
     margin: 0;
 }
 
-.readme-popup {
-    display: none;
-    position: absolute;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    padding: 10px;
-    width: 300px;
-    z-index: 1;
-}
+
 
 .source-code-wrap a,
 .readme_file {
