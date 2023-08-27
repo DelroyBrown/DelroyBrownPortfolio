@@ -87,7 +87,7 @@ class MyWork(models.Model):
 
 
 class AboutMe(models.Model):
-    about_me_blurb = models.TextField(max_length=5000, blank=True, null=True, default='')
+    about_me_blurb = RichTextField(max_length=5000, blank=True, null=True, default='')
 
     class Meta:
         verbose_name_plural = 'About Me'
