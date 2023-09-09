@@ -36,6 +36,8 @@
                         <p class="source-code-wrap">
                             {% if mywork.project_source_code_link %}
                                 <a href="{{mywork.project_source_code_link}}" target="_blank">Source Code</a>
+                                {% else %}
+                                <a href="{{mywork.project_link}}" target="_blank">View Project</a>
                             {% endif %}
                         </p>
                     </li>
