@@ -89,7 +89,7 @@ class MyWork(models.Model):
 
 class AboutMe(models.Model):
     about_me_blurb = RichTextField(max_length=5000, blank=True, null=True, default="")
-    download_cv = models.FileField(blank=True, null=True)
+    download_cv = models.FileField(blank=True, null=True, upload_to='CV')
 
     class Meta:
         verbose_name_plural = "About Me"
